@@ -1,0 +1,59 @@
+
+CAFA 5 - BASELINE MODELS EVALUATION SUMMARY
+
+TASK: Multi-Label Classification (Molecular Function)
+- Number of GO terms: 50
+- Test set size: 21337 proteins
+
+MODELS EVALUATED:
+1. Logistic Regression (OneVsRest)
+2. Random Forest (100 estimators)
+3. XGBoost (100 estimators)
+
+BEST MODEL: XGBoost
+
+TEST SET PERFORMANCE (BEST MODEL):
+- Hamming Loss: 0.0490
+- Subset Accuracy: 0.2367
+- F1 Score (Micro): 0.4135
+- F1 Score (Macro): 0.2048
+- Precision (Micro): 0.6270
+- Recall (Micro): 0.3085
+
+MODEL COMPARISON (Validation F1 Micro):
+- Logistic Regression: 0.3123
+- Random Forest: 0.3628
+- XGBoost: 0.4158
+
+PER-LABEL PERFORMANCE:
+- Best performing GO term: GO:0003674 (F1: 0.7012)
+- Worst performing GO term: GO:0043168 (F1: 0.0369)
+- Average F1 across all GO terms: 0.2048
+
+KEY INSIGHTS:
+- Multi-label classification is challenging (low subset accuracy)
+- Micro F1 > Macro F1 indicates imbalanced label distribution
+- Performance correlates with label frequency (support)
+- Classical ML provides strong baseline for comparison
+
+NEXT STEPS:
+1. Implement deep learning models (LSTM, CNN, Attention)
+2. Use protein sequence directly (embeddings)
+3. Address label imbalance (class weights, focal loss)
+4. Ensemble methods (combine multiple models)
+5. Extend to Biological Process and Cellular Component
+
+FILES GENERATED:
+- models/lr_model_mf.pkl
+- models/rf_model_mf.pkl
+- models/xgb_model_mf.pkl
+- reports/baseline_model_comparison.csv
+- results/y_test_pred_baseline.npy
+- results/test_metrics_baseline.pkl
+- results/per_label_performance.csv
+- visuals/08_baseline_model_comparison.png
+- visuals/09_per_label_performance.png
+- visuals/10_support_vs_performance.png
+- visuals/top_k_accuracy.png
+BASELINE ESTABLISHED ✓
+READY FOR DEEP LEARNING ✓

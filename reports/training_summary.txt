@@ -1,0 +1,6 @@
+
+Training Summary
+================
+Final Training Loss: 0.9670
+Final Validation Loss: 0.9485
+Epochs Trained: 15

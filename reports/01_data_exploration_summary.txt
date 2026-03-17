@@ -1,0 +1,73 @@
+
+CAFA 5 PROTEIN FUNCTION PREDICTION - DATA EXPLORATION SUMMARY
+
+DATASET SOURCE:
+- Competition: CAFA 5 (Critical Assessment of Functional Annotation)
+- Platform: Kaggle
+- URL: https://www.kaggle.com/c/cafa-5-protein-function-prediction
+
+TRAINING DATA STATISTICS:
+- Total proteins: 142,246
+- Total protein-GO term pairs: 5,363,863
+- Unique GO terms: 31,466
+  • Molecular Function (F): 0
+  • Biological Process (P): 0
+  • Cellular Component (C): 0
+
+SEQUENCE STATISTICS:
+- Mean length: 554 amino acids
+- Median length: 411 amino acids
+- Min length: 3
+- Max length: 35375
+- Std dev: 642
+
+GO TERM ANNOTATIONS PER PROTEIN:
+- Mean total GO terms: 37.71
+- Median total GO terms: 24
+- Mean MF terms: 4.71
+- Mean BP terms: 24.59
+- Mean CC terms: 8.41
+
+TOP 5 MOST COMMON GO TERMS (OVERALL):
+
+  GO:0005575 (CCO): 92,912 proteins
+  GO:0008150 (BPO): 92,210 proteins
+  GO:0110165 (CCO): 91,286 proteins
+  GO:0003674 (MFO): 78,637 proteins
+  GO:0005622 (CCO): 70,785 proteins
+
+DATA QUALITY:
+- Proteins with at least one GO term: 142,246 (100.0%)
+- Complete sequences: ✓
+- Missing values: None detected
+
+DATASET CHARACTERISTICS:
+- Multi-label classification problem
+- Hierarchical labels (GO term structure)
+- Imbalanced labels (some GO terms are rare)
+- Variable sequence lengths (need padding/truncation)
+- Large vocabulary (20 amino acids + special tokens)
+
+CHALLENGES IDENTIFIED:
+1. Label imbalance - top GO terms have 1000s of examples, rare ones have <10
+2. Long sequences - some proteins >5000 amino acids (computational cost)
+3. Hierarchical structure - GO terms have parent-child relationships
+4. Multi-label - each protein has multiple GO terms
+
+NEXT STEPS:
+1. Select target GO terms (focus on common terms initially)
+2. Feature extraction (amino acid composition, k-mers, embeddings)
+3. Baseline models (classical ML)
+4. Deep learning (LSTM, CNN, Transformers)
+5. Evaluation using CAFA metrics (Fmax, AUPR, Smin)
+
+FILES GENERATED:
+- data/processed/train_sequences.csv
+- data/processed/protein_dataset_with_go.csv
+- data/processed/GO_F_frequencies.csv
+- data/processed/GO_P_frequencies.csv
+- data/processed/GO_C_frequencies.csv
+- visuals/01_top_go_terms_by_category.png
+- visuals/02_go_terms_per_protein.png
+- visuals/03_sequence_length_analysis.png
+- visuals/04_amino_acid_composition.png
